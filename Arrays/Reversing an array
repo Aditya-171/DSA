@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+void reverse(int arr[],int n)
+{
+	
+	int low=0;
+	int high=n-1;
+	while(low<high)
+	{
+		int temp=arr[low];
+		arr[low]=arr[high];
+		arr[high]=temp;
+		high--;
+		low++;
+				
+	}
+}
+
+int main()
+{
+	int size,result;
+	cout<<"Enter the size of the array- ";
+	cin>>size;
+	int *array=new int[size];
+	cout<<endl<<"Enter the elements the array"<<endl;
+	for(int i=0;i<size;i++)
+	{
+		cin>>array[i];
+	}
+	reverse(array,size);
+	cout<<endl<<"Updated Array is "<<endl;
+	for(int i=0;i<size;i++)
+	{
+		cout<<array[i]<<" ";
+	}	
+	
+	return 0;
+}
