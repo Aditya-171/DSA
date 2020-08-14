@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int getLargest(int arr[],int n)
+{
+	int res=0;
+	for(int i=1;i<n;i++)
+	{
+		if(arr[i]>arr[res])
+		{
+			res=i;
+		}
+	}
+	return res;
+}
+int main()
+{
+	int size,user_value,result;
+	cout<<"Enter the size of the array- ";
+	cin>>size;
+	int *array=new int[size];
+	cout<<endl<<"Enter the elements the array"<<endl;
+	for(int i=0;i<size;i++)
+	{
+		cin>>array[i];
+	}
+	
+	result=getLargest(array,size);
+		cout<<endl<<"The largest element is "<<array[result];
+	
+	return 0;
+}
