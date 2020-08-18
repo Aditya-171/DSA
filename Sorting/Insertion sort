@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+void insertion_sort(int arr[],int n)
+{	for (int i=1;i<n;i++)
+    {   	
+    	int  key=arr[i];
+    	int j=i-1;
+    	while(j>=0 && arr[j]>key)
+    	{   
+		    arr[j+1]=arr[j];
+    		j--;
+		}
+	arr[j+1]=key;
+    } 
+
+}
+
+int main()
+{
+	int size,result;
+	cout<<"Enter the size of the array- ";
+	cin>>size;
+	int *array=new int[size];
+	cout<<endl<<"Enter the elements the array"<<endl;
+	for(int i=0;i<size;i++)
+	{
+		cin>>array[i];
+	}
+	insertion_sort(array,size);
+	cout<<endl<<"Sorted Array is "<<endl;
+	for(int i=0;i<size;i++)
+	{
+		cout<<array[i]<<" ";
+	}	
+	return 0;
+} 
