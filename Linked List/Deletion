@@ -42,6 +42,22 @@ void display(node* head)
     }
     cout<<endl;
 }
+
+void delete_at_head(node* &head)
+{
+    if(head==NULL){
+        return ;
+
+    }
+    if(head->next==NULL)
+    {
+        delete_at_head(head);
+        return;
+    }
+    node* todelete=head;
+    head=head->next;
+    delete todelete;
+}
 void delete_val(node* &head, int val)
 {
     node* temp=head;
@@ -68,6 +84,8 @@ int  main()
     insert(head,5);
     display(head);
     delete_val(head,4);
+    display(head);
+    delete_at_head(head);
     display(head);
 
     return 0;
